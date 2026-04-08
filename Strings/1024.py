@@ -14,3 +14,27 @@ n = int(input())
 
 for i in range(n):
     texto = input()
+
+    
+    texto1 = ""
+    for c in texto:
+        if c.isalpha():
+            texto1 += chr(ord(c) + 3)
+        else:
+            texto1 += c
+
+    
+    texto2 = texto1[::-1]
+
+    
+    metade = len(texto2) // 2
+    
+    parte_inicial = texto2[:metade] 
+    parte_final = ""
+    
+    
+    for c in texto2[metade:]:
+        parte_final += chr(ord(c) - 1)
+
+    texto_final = parte_inicial + parte_final
+    print(texto_final)
